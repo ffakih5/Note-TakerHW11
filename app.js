@@ -6,7 +6,7 @@ app.use(express.static('public'))
 app.get('/api/notes', function (req, res) {
   const file = fs.readFileSync("db/db.json", "utf8");
 
-  res.json(file);
+  res.json(JSON.parse(file));
 })
 
 
