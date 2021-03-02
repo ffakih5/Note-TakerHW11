@@ -6,5 +6,9 @@ module.exports = (app) => {
     app.get('/notes', (err,res)=>{
         res.sendFile(path.join(__dirname, '..public/notes.html'));
     });
+
+    app.get('/notes', (err,res)=>{
+        res.sendFile(path.join(__dirname, '..public/index.html'));
+    }); 
 }
 
