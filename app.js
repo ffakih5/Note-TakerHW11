@@ -11,13 +11,6 @@ require('./routes/apiroutes') (app);
 require('./routes/htmlroutes') (app);
 
 
-app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
-
-
-
-/*app.get('/api/notes', function (req, res) {
-  const file = fs.readFileSync("db/db.json", "utf8");
-
-  res.json(JSON.parse(file));
-})
-*/
+app.listen(PORT, () => {
+  console.log(`App listening on PORT ${PORT}`)
+  }); 

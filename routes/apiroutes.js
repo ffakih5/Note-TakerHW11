@@ -62,11 +62,8 @@ module.exports = (app) => {
           });
 
         });
-        // Empty out the arrays of data
-        tableData.length = 0;
-        waitListData.length = 0;
     
-        res.json({ ok: true });
+        res.status(204).send();
       });
     };
     
