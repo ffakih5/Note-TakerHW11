@@ -42,6 +42,8 @@ module.exports = (app) => {
         // req.body is available since we're using the body parsing middleware if (notesData.length < 5) { notesData.push(req.body); res.json(true); } else { waitListData.push(req.body); res.json(false);  }
     
       app.delete('/api/notes/:id', (req, res) => {
+        const deleteNote = req.params.id;
+        console.log(deleteNote);
         // Empty out the arrays of data
         tableData.length = 0;
         waitListData.length = 0;
