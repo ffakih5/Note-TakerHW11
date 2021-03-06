@@ -7,12 +7,12 @@ module.exports = (app) => {
 
     })
 
-    app.post('/api/tables', (req, res) => {
+    app.post('/api/notes', (req, res) => {
         // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
         // It will do this by sending out the value "true" have a table
         // req.body is available since we're using the body parsing middleware
-        if (tableData.length < 5) {
-          tableData.push(req.body);
+        if (notesData.length < 5) {
+          notesData.push(req.body);
           res.json(true);
         } else {
           waitListData.push(req.body);
