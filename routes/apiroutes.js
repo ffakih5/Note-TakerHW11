@@ -27,7 +27,7 @@ module.exports = (app) => {
 
         stringData = JSON.stringify(dbInput);
 
-        fs.writeFile('./db/db.json', (err, data) => {
+        fs.writeFile('./db/db.json', stringData, (err, data) => {
           if (err) throw err;
         });
       });
