@@ -50,8 +50,8 @@ module.exports = (app) => {
 
           dbInput = JSON.parse(data);
 
-          for (let i = 0; i <dbInput.length; i++) {
-            if (dbInput[i].id === number(deleteNote)) {
+          for (let i = 0; i < dbInput.length; i++) {
+            if (deleteNote === dbInput[i].id) {
               dbInput.splice([i], 1);
             }
           }
