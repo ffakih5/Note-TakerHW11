@@ -1,7 +1,17 @@
 const express = require('express')
-const app = express()
 const fs = require("fs") 
+const path = require('path');
+
+const app = express()
+const PORT = 3000;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(express.static('public')) 
+
+
+
 
 app.get('/api/notes', function (req, res) {
   const file = fs.readFileSync("db/db.json", "utf8");
@@ -11,4 +21,4 @@ app.get('/api/notes', function (req, res) {
 
 
 
-app.listen(3000)
+app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
