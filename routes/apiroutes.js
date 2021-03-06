@@ -57,7 +57,11 @@ module.exports = (app) => {
           }
           stringData = JSON.stringify(dbInput);
 
-        })
+          fs.writeFile('./db/db.json', stringData, (err,data) => {
+            if (err) throw err;
+          });
+
+        });
         // Empty out the arrays of data
         tableData.length = 0;
         waitListData.length = 0;
