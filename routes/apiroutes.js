@@ -41,7 +41,7 @@ module.exports = (app) => {
         // It will do this by sending out the value "true" have a table
         // req.body is available since we're using the body parsing middleware if (notesData.length < 5) { notesData.push(req.body); res.json(true); } else { waitListData.push(req.body); res.json(false);  }
     
-      app.post('/api/clear', (req, res) => {
+      app.delete('/api/notes/:id', (req, res) => {
         // Empty out the arrays of data
         tableData.length = 0;
         waitListData.length = 0;
