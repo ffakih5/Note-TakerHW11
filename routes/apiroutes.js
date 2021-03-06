@@ -31,6 +31,7 @@ module.exports = (app) => {
           if (err) throw err;
         });
       });
+      res.send('Cool Note!')
       
       });
     
