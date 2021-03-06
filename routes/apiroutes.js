@@ -44,6 +44,14 @@ module.exports = (app) => {
       app.delete('/api/notes/:id', (req, res) => {
         const deleteNote = req.params.id;
         console.log(deleteNote);
+
+        fs.readFile('./db/db.json', (err, data) => {
+          if (err) throw err;
+
+          dbInput = JSON.parse(data);
+
+         
+        })
         // Empty out the arrays of data
         tableData.length = 0;
         waitListData.length = 0;
