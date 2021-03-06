@@ -20,5 +20,4 @@ app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
 
   res.json(JSON.parse(file));
 })
-const path = require('path');
 */
