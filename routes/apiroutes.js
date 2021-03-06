@@ -50,7 +50,13 @@ module.exports = (app) => {
 
           dbInput = JSON.parse(data);
 
-         
+          for (let i = 0; i <dbInput.length; i++) {
+            if (dbInput[i].id === Number(deleteNote)) {
+              dbInput.splice([i], 1);
+            }
+          }
+          stringData = JSON.stringify(dbInput);
+
         })
         // Empty out the arrays of data
         tableData.length = 0;
