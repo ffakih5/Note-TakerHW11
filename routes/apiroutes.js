@@ -14,8 +14,23 @@ module.exports = (app) => {
       const userNote = req.body;
 
       fs.readFile('./db/db.json', (err, data) => {
+        if (err) throw err;
+        dbInput = JSON.parse(data);
+        dbInput.push(userNote);
+        let number = 1;
+        dbInput.forEach((note, i) => {
+          note.i = number; 
+          number ++;
+          return dbInput;
+        });
+        console.log(dbInput);
 
-      })
+        stringData = JSON.stringify(dbInput);
+
+        fs.writeFile('./db/db.json', (err, data) => {
+          if (err) throw err;
+        });
+      });
         // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
         // It will do this by sending out the value "true" have a table
         // req.body is available since we're using the body parsing middleware
