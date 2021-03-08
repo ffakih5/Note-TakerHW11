@@ -19,7 +19,7 @@ module.exports = (app) => {
         dbInput.push(userNote);
         let number = 1;
         dbInput.forEach((note, i) => {
-          note.i = number; 
+          note.id = number; 
           number ++;
           return dbInput;
         });
@@ -41,8 +41,8 @@ module.exports = (app) => {
         // It will do this by sending out the value "true" have a table
         // req.body is available since we're using the body parsing middleware if (notesData.length < 5) { notesData.push(req.body); res.json(true); } else { waitListData.push(req.body); res.json(false);  }
     
-      app.delete('/api/notes/:id', (req, res) => {
-        const deleteNote = req.params.id;
+      app.delete('/api/notes/:note', (req, res) => {
+        const deleteNote = req.params.note;
         console.log(deleteNote);
 
         fs.readFile('./db/db.json', (err, data) => {
@@ -51,7 +51,7 @@ module.exports = (app) => {
           dbInput = JSON.parse(data);
 
           for (let i = 0; i < dbInput.length; i++) {
-            if (deleteNote === dbInput[i].id) {
+            if (dbInput[i].id === Number(deleteNote)) {
               dbInput.splice([i], 1);
             }
           }

@@ -81,7 +81,8 @@ const handleNoteDelete = (e) => {
   e.stopPropagation();
 
   const note = e.target;
-  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
+  console.log(note.parentElement.getAttribute('data-note'));
+  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id
 
   if (activeNote.id === noteId) {
     activeNote = {};
@@ -144,6 +145,7 @@ const renderNoteList = async (notes) => {
         'delete-note'
       );
       delBtnEl.addEventListener('click', handleNoteDelete);
+
 
       liEl.append(delBtnEl);
     }
