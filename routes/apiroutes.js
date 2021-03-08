@@ -23,7 +23,6 @@ module.exports = (app) => {
           number ++;
           return dbInput;
         });
-        console.log(dbInput);
 
         stringData = JSON.stringify(dbInput);
 
@@ -43,7 +42,6 @@ module.exports = (app) => {
     
       app.delete('/api/notes/:note', (req, res) => {
         const deleteNote = req.params.note;
-        console.log(deleteNote);
 
         fs.readFile('./db/db.json', (err, data) => {
           if (err) throw err;
