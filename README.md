@@ -2,7 +2,7 @@
 
 <img alt="Node Express Badge" src="https://img.shields.io/badge/NoteTaker-NodeExpress-orange">
 
-_ A simple note taking app. Designed for easy use to enter a new note with a title; save and delete notes._
+_A simple note taking app. Designed for easy use to enter a new note with a title; save and delete notes._
 
 ![NoteTaker](public/assets/img/NoteTaker.png)
 
