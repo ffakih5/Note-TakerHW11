@@ -1,3 +1,4 @@
-# Note-TakerHW11 🗒 < a href=https://img.shields.io/badge/NoteTaker-NodeExpress-orange>
+# Note-TakerHW11 🗒 <img alt="Node Express Badge" src="https://img.shields.io/badge/NoteTaker-NodeExpress-orange" >
+
 
 
